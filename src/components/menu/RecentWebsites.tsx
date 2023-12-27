@@ -1,9 +1,8 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
-import styled from "styled-components";
-import { websitesStateSelector } from "../../state/websitesState";
-import SideBarWebsiteItem from "./SideBarWebsiteItem";
-import { useParams } from "react-router";
+import React from 'react'
+import { useRecoilValue } from 'recoil'
+import styled from 'styled-components'
+import SideBarWebsiteItem from './SideBarWebsiteItem'
+import { useParams } from 'react-router'
 
 const SubCategoriesWrapper = styled.div`
   display: flex;
@@ -22,22 +21,10 @@ const SubCategoriesWrapper = styled.div`
   & a:nth-child(4) .square-colored {
     background: #90e0ff;
   }
-`;
+`
 
 const RecentWebsites: React.FC = () => {
-  const websitesSelector = useRecoilValue(websitesStateSelector);
-  const { websiteId } = useParams();
-  return (
-    <SubCategoriesWrapper>
-      {websitesSelector?.map((website) => (
-        <SideBarWebsiteItem
-          websiteId={website.id}
-          websiteUrl={website.websiteUrl}
-          isSelected={websiteId === website.id}
-        />
-      ))}
-    </SubCategoriesWrapper>
-  );
-};
+  return <SubCategoriesWrapper></SubCategoriesWrapper>
+}
 
-export default RecentWebsites;
+export default RecentWebsites

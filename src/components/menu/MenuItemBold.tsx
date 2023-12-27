@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Link from "../common/Link";
+import styled from 'styled-components'
+import Link from '../common/Link'
 
 const MenuItemBold = styled(Link)`
   background: white;
@@ -24,7 +24,7 @@ const MenuItemBold = styled(Link)`
   letter-spacing: -0.02625rem;
 
   & svg {
-    margin-right: 10px;
+    margin-left: 10px;
     height: 18px;
     width: 18px;
   }
@@ -49,7 +49,7 @@ const MenuItemBold = styled(Link)`
     position: relative;
     top: 1px;
 
-    margin-left: var(--arrowSpacing);
+    margin-right: var(--arrowSpacing);
     stroke-width: 2px;
     fill: none;
     stroke: currentColor;
@@ -62,6 +62,6 @@ const MenuItemBold = styled(Link)`
     transform: var(--arrowTipTransform);
     transition: transform var(--hoverTransition, var(--arrowHoverTransition));
   }
-`;
+`
 
-export default MenuItemBold;
+export default MenuItemBold

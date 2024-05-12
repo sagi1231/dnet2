@@ -10,7 +10,7 @@ import FormStyle from '../components/common/form/FormStyle'
 import Button from '../components/common/form/Button'
 import AuthHeader from '../components/auth/AuthHeader'
 import { UpdatePasswordRequestData } from '../core/services/requests/updatePassword/updatePasswordRequestData'
-import { useNavigate, useParams } from 'react-router'
+import { useNavigate} from 'react-router'
 
 const LoginPageWrapper = styled.div`
   height: 100%;

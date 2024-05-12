@@ -1,13 +1,11 @@
 import { InputText } from 'primereact/inputtext'
 import { ReactComponent as GoogleIcon } from '../assets/Icons/ColoredGoogle.svg'
-import { useCallback, useEffect, useState } from 'react'
-import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
-import userService from '../core/services/user.service'
+import { useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { useSetRecoilState } from 'recoil'
 import { userState } from '../state/userState'
 import styled from 'styled-components'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
-import { LoginRequestData } from '../core/services/requests/login/loginRequestData'
 import { Message } from 'primereact/message'
 import RegexValidations from '../core/validation/regexValidations'
 import FormStyle from '../components/common/form/FormStyle'
@@ -16,7 +14,6 @@ import { ReactComponent as Logo } from '../assets/Logo/ColoredLogo.svg'
 import { SignupRequestData } from '../core/services/requests/signup/signupRequestData'
 import Link from '../components/common/Link'
 import { Checkbox } from 'primereact/checkbox'
-import AppConfig from '../config/appConfig'
 import companyService from '../core/services/company.service'
 
 const LoginPageWrapper = styled.div`
@@ -141,24 +138,16 @@ const Signup: React.FC = () => {
   }
 
   const onClickGoogleButton = () => {
-    const redirectPath = queryParams.get('redirect') || '/websites'
-    document.location.href = `https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=${
-      AppConfig.serverUrl
-    }/auth%2Fgoogle%2Fcallback&client_id=89013921262-762mm9l2lfq3dfv4rf185srjgq8ulihg.apps.googleusercontent.com&access_type=offline&response_type=code&prompt=consent&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email&state=${encodeURIComponent(
-      redirectPath,
-    )}`
+    // add fbi
   }
 
   return (
     <LoginPageWrapper>
-      <Logo />
-      <Title>
-        Create Top-Notch content effortlessly, <span>autonomously.</span>
-      </Title>
+      <Title>ענף איתורֿ</Title>
       <CenteredForm autoComplete="off">
         <GoogleButton onClick={onClickGoogleButton}>
+          sso
           <GoogleIcon />
-          continue with google
         </GoogleButton>
         <div className="w-full mb-5">
           <label>Email</label>
@@ -195,16 +184,6 @@ const Signup: React.FC = () => {
             className={errors.password ? 'p-invalid' : ''}
           />
         </div>
-        <StyledCheckboxWrapper>
-          <Controller
-            control={control}
-            name="newsletter"
-            render={({ field }) => (
-              <Checkbox checked={field.value} onChange={field.onChange} />
-            )}
-          />
-          <label>I Agree to join ghostwrite’s mailing list</label>
-        </StyledCheckboxWrapper>
         <Button
           className="mb-4"
           onClick={handleSubmit(onSubmit)}

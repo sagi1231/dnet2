@@ -1,5 +1,4 @@
-import { ReactComponent as Logo } from "../../assets/Logo/ColoredLogo.svg";
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Title = styled.h1`
   color: var(--main-title-color, #0a2540);
@@ -16,20 +15,15 @@ const Title = styled.h1`
   & span {
     color: var(--main-purple, #a960ee);
   }
-`;
+`
 
 const AuthHeader: React.FC = () => {
+  return (
+    <>
+      {/* <Logo /> */}
 
-
-    return (
-        <>
-
-            <Logo />
-
-            <Title>
-                Create Top-Notch content effortlessly, <span>autonomously.</span>
-            </Title>
-        </>
-    )
+      <Title>ענף איתור </Title>
+    </>
+  )
 }
 export default AuthHeader

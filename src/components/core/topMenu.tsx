@@ -1,22 +1,13 @@
 import { Avatar } from 'primereact/avatar'
-import { AvatarGroup } from 'primereact/avatargroup' //Optional for grouping
 import { Button } from 'primereact/button'
-import { useRecoilState, useRecoilValue, useRecoilValueLoadable } from 'recoil'
-import { formatUserName } from '../../common/utils/formatUserName'
+import { useRecoilValue } from 'recoil'
 import { userStateSelector } from '../../state/userState'
 import styled from 'styled-components'
 import React, { useRef, useState } from 'react'
-//import { useRouter } from 'next/router';
 import { Menu } from 'primereact/menu'
 import userService from '../../core/services/user.service'
 import { useNavigate } from 'react-router'
-import GWButton from '../common/form/Button'
-import { ReactComponent as DownloadIcon } from '../../assets/Icons/Download.svg'
 import Link from '../common/Link'
-import { Tooltip } from 'primereact/tooltip'
-
-import Lottie from 'lottie-react'
-import PenAnimation from '../../assets/Icons/PenLottie.json'
 import SideBar from '../menu/SideBar'
 import Preloader from '../common/Preloader'
 
